@@ -26,7 +26,7 @@
                 <div class="row mb-3">
                     <div class="mb-3">
                         <label for="taskAdd" class="form-label">Aggiungi task</label>
-                        <input v-model="inputValue" type="text" class="form-control" id="taskAdd" placeholder="insert here...">
+                        <input @keyup.enter="addTask()" v-model="inputValue" type="text" class="form-control" id="taskAdd" placeholder="insert here...">
                     </div>
                     <div class="col">
                         <button @click="addTask()" class="btn btn-primary">Add task</button>
