@@ -1,3 +1,12 @@
+.dark-theme {
+    background-color: #333;
+    color: #eee;
+}
+
+.todolist .list-group-item {
+    line-height: 2.5rem;
+}
+
 .todolist .list-group-item.done {
     text-decoration: line-through;
     color: lightgray;

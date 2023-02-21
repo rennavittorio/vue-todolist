@@ -5,33 +5,54 @@ createApp({
         return {
             tasks: [
                 {
-                    taskText: 'default 1',
-                    done: true,
-                },
-                {
-                    taskText: 'default 2',
-                    done: true,
-                },
-                {
-                    taskText: 'default 3',
+                    taskText: 'example task 1',
                     done: false,
-                }
+                },
+                {
+                    taskText: 'example task 2',
+                    done: false,
+                },
+
             ],
 
             inputValue: '',
+
+            doneTasks: [
+                {
+                    taskText: 'example completed task 1',
+                    done: true,
+                },
+            ],
         }
     },
 
     methods: {
         addTask(){
-            this.tasks.push({
-                taskText: this.inputValue,
-                done: false,
-            });
+            if (this.inputValue !== ''){
+                this.tasks.push({
+                    taskText: this.inputValue,
+                    done: false,
+                });
+                this.inputValue = '';
+
+            }
+        },
+
+        tickTask(task, index){
+            if (task.done === false){
+                task.done = true;
+                this.doneTasks.push(task);
+                this.tasks.splice(index, 1);
+
+            } else {
+                task.done = false;
+                this.tasks.push(task);
+                this.doneTasks.splice(index, 1);
+            }
         },
 
         removeTask(index){
-            this.tasks.splice(index, 1);
+            this.doneTasks.splice(index, 1);
         }
     },
 
