@@ -14,7 +14,7 @@
 
 </head>
 <body>
-    <div id="app">
+    <div id="app" class="todolist">
         <section class="py-5">
             <div class="container">
                 <h1>
@@ -37,8 +37,8 @@
             <div class="container">
                 <div class="card">
                     <ul class="list-group list-group-flush">
-                        <li v-for="(task, index) in tasks" @click="removeTask(index)" class="list-group-item">
-                            {{ task }}
+                        <li v-for="(task, index) in tasks" @click="removeTask(index)" :class="['list-group-item', task.done ? 'done' : '']">
+                            {{ task.taskText }} --- {{ task.done }}
                         </li>
                     </ul>
                 </div>

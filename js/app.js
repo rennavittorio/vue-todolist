@@ -4,11 +4,20 @@ createApp({
     data() {
         return {
             tasks: [
-                'task 1',
-                'task 2',
-                'task 3',
+                {
+                    taskText: 'default 1',
+                    done: true,
+                },
+                {
+                    taskText: 'default 2',
+                    done: true,
+                },
+                {
+                    taskText: 'default 3',
+                    done: false,
+                }
             ],
-            inputValue: 'default task',
+            inputValue: '',
         }
     },
 
