@@ -17,15 +17,19 @@ createApp({
                     done: false,
                 }
             ],
+
             inputValue: '',
         }
     },
 
     methods: {
         addTask(){
-            console.log('taskAdded', this.inputValue);
-            this.tasks.push(this.inputValue);
+            this.tasks.push({
+                taskText: this.inputValue,
+                done: false,
+            });
         },
+
         removeTask(index){
             this.tasks.splice(index, 1);
         }

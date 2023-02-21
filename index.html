@@ -37,8 +37,13 @@
             <div class="container">
                 <div class="card">
                     <ul class="list-group list-group-flush">
-                        <li v-for="(task, index) in tasks" @click="removeTask(index)" :class="['list-group-item', task.done ? 'done' : '']">
-                            {{ task.taskText }} --- {{ task.done }}
+                        <li v-for="(task, index) in tasks" :class="['list-group-item', 'd-flex','justify-content-between', 'align-items-center', task.done ? 'done' : '']">
+                            <div class="task-text">
+                                {{ task.taskText }} --- {{ task.done }}
+                            </div>
+                            <div class="delete-btn">
+                                <button @click="removeTask(index)" class="btn btn-danger">X</button>
+                            </div>
                         </li>
                     </ul>
                 </div>
