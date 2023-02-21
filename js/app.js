@@ -56,4 +56,14 @@ createApp({
         }
     },
 
+    computed: {
+        countToBeDoneList(){
+            return this.tasks.length;
+        },
+
+        countDoneList(){
+            return this.doneTasks.length;
+        },
+    }
+
 }).mount('#app')
