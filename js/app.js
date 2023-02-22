@@ -28,7 +28,7 @@ createApp({
 
     methods: {
         addTask(){
-            if (this.inputValue !== ''){
+            if (this.inputValue.trim() !== ''){
                 this.tasks.push({
                     taskText: this.inputValue,
                     done: false,
